@@ -46,6 +46,8 @@ def parse(arguments):
         if arguments.index('--gc_bounds') + 1 != len(arguments)-1:
             if arguments[arguments.index('--gc_bounds') + 2].isdigit():
                 diction['gc bounds'] = [int(arguments[arguments.index('--gc_bounds') + 1]), int(arguments[arguments.index('--gc_bounds') + 2])]
+            else:
+                diction['gc bounds'] = [int(arguments[arguments.index('--gc_bounds') + 1])]
         else:
             diction['gc bounds'] = [int(arguments[arguments.index('--gc_bounds') + 1])]
     else:
