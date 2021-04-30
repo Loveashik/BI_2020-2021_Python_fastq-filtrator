@@ -28,6 +28,9 @@ def parse(arguments):
                 if i % 4 == 0:
                     reads.append(tuple(current_read))
                     current_read = []
+    else:
+        raise Exception('Please, specify .fastq file in args!')
+
     diction['reads'] = reads
 
     if '--min_length' in arguments:

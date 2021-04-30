@@ -41,15 +41,7 @@ def filter_reads(diction):
                     else:
                         reads_failed.append(reads[i])
 
-    output_file_sorted = diction["output base name"][0]
-    with open(output_file_sorted, 'w') as output:
-        for read in reads_passed:
-            for w in read:
-                output.write(w + '\n')
-
     if diction['keep filtered'] == 'True':
-        output_file_error = diction["output base name"][1]
-        with open(output_file_error, 'w') as output:
-            for read in reads_failed:
-                for w in read:
-                    output.write(w + '\n')
+        return reads_passed, reads_failed
+    else:
+        return reads_passed
